@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# Telegram Quiz Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Веб-приложение для проведения викторин в Telegram.
 
-## Available Scripts
+## Установка
 
-In the project directory, you can run:
+1. Клонируйте репозиторий:
 
-### `npm start`
+```bash
+git clone https://github.com/your-username/tg_web_app_react.git
+cd tg_web_app_react
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Установите зависимости:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm install
+```
 
-### `npm test`
+3. Создайте файл `.env` в корневой директории проекта и добавьте следующие переменные:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+REACT_APP_BOT_TOKEN=your_bot_token_here
+REACT_APP_BOT_USERNAME=your_bot_username_here
+REACT_APP_WEB_APP_URL=https://your-domain.com
+```
 
-### `npm run build`
+## Настройка окружения
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Скопируйте файл `.env.example` в `.env`:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+cp .env.example .env
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Заполните все необходимые переменные окружения в файле `.env`:
 
-### `npm run eject`
+- `REACT_APP_BOT_TOKEN`: Токен вашего Telegram бота (получите у @BotFather)
+- `REACT_APP_BOT_USERNAME`: Имя пользователя вашего бота без символа '@'
+- `REACT_APP_WEB_APP_URL`: URL, где размещено ваше веб-приложение
+- `REACT_APP_API_URL`: URL вашего API
+- `REACT_APP_ENV`: Окружение (`development` или `production`)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+⚠️ ВАЖНО:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Никогда не коммитьте файл `.env` в репозиторий
+- Не включайте реальные токены и ключи в публичный код
+- Храните резервную копию ваших ключей в безопасном месте
+- Регулярно меняйте токены и ключи для безопасности
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Разработка
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Запустите приложение в режиме разработки:
 
-## Learn More
+```bash
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Приложение будет доступно по адресу [http://localhost:3000](http://localhost:3000).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Сборка для продакшена
 
-### Code Splitting
+Для создания продакшен-сборки выполните:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm run build
+```
 
-### Analyzing the Bundle Size
+Собранное приложение будет находиться в директории `build`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Интеграция с Telegram
 
-### Making a Progressive Web App
+1. Создайте бота через [@BotFather](https://t.me/botfather)
+2. Получите токен бота
+3. Создайте веб-приложение для бота через [@BotFather](https://t.me/botfather)
+4. Укажите URL вашего приложения в настройках веб-приложения
+5. Добавьте кнопку для запуска веб-приложения в меню бота
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Технологии
 
-### Advanced Configuration
+- React
+- Material-UI
+- Telegram Web App SDK
+- Create React App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# Security
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+.env*
+!.env.example
+*.pem
+_.key
+_.cert
