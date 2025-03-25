@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 
 function QuestionCard({ question, currentQuestion, totalQuestions, onAnswer, timeLeft }) {
 	const [usedHint, setUsedHint] = useState(false);
@@ -143,4 +143,4 @@ function QuestionCard({ question, currentQuestion, totalQuestions, onAnswer, tim
 	);
 }
 
-export default React.memo(QuestionCard);
+export default memo(QuestionCard);

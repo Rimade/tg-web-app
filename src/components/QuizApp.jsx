@@ -1,6 +1,6 @@
 import WebApp from '@twa-dev/sdk';
 import axios from 'axios';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { APP_CONFIG } from '../constants';
 import DetailedResult from './DetailedResult';
 import DifficultySelect from './DifficultySelect';
@@ -45,10 +45,10 @@ const createSound = (type) => {
 };
 
 // Добавим мемоизацию для предотвращения лишних ререндеров
-const MemoizedStatusBar = React.memo(StatusBar);
-const MemoizedQuestionCard = React.memo(QuestionCard);
-const MemoizedDetailedResult = React.memo(DetailedResult);
-const MemoizedDifficultySelect = React.memo(DifficultySelect);
+const MemoizedStatusBar = memo(StatusBar);
+const MemoizedQuestionCard = memo(QuestionCard);
+const MemoizedDetailedResult = memo(DetailedResult);
+const MemoizedDifficultySelect = memo(DifficultySelect);
 
 function QuizApp() {
 	const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -354,4 +354,4 @@ function QuizApp() {
 	);
 }
 
-export default React.memo(QuizApp);
+export default memo(QuizApp);

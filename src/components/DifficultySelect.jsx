@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 function DifficultySelect({ onSelect }) {
 	const difficulties = [
 		{
@@ -60,4 +62,4 @@ function DifficultySelect({ onSelect }) {
 	);
 }
 
-export default React.memo(DifficultySelect);
+export default memo(DifficultySelect);
