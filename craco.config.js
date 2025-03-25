@@ -5,8 +5,8 @@ module.exports = {
         rules: [
           {
             test: /\.js$/,
-            enforce: "pre",
-            use: ["source-map-loader"],
+            enforce: 'pre',
+            use: ['source-map-loader'],
             exclude: /@twa-dev\/sdk/,
           },
         ],
